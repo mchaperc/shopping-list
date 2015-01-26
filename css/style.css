@@ -1,0 +1,146 @@
+body {
+	margin: 0 auto;
+	display: block;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #efefef;
+}
+
+* {
+	outline: none;
+}
+
+/***************************
+Header Styling
+***************************/
+
+.top {
+	position: relative;
+	margin: 0 auto;
+	background-color: #efefef;
+	width: 100%;
+	height: 240px;
+	padding: 1em;
+	text-align: center;
+}
+
+.shop-icon {
+	position: relative;
+	margin: 0 auto;
+	height: 100px;
+	width: 100px;
+	background-color: white;
+	border-radius: 100%;
+	border: 2px solid #EF8718;
+}
+
+.shop-icon img {
+	position: relative;
+	margin: 0 auto;
+	top: 7px;
+	height: 85px;
+	width: 85px;
+	border: 1px solid black;
+	box-shadow: 0 0 3px black;
+	border-radius: 100%;
+}
+
+.top-title {
+	position: relative;
+	margin: 0 auto;
+}
+
+.top-title h1, .top-title h2, .top-title h3 {
+	padding: 0;
+	margin: .2em;
+}
+
+.top h1 {
+	font-family: 'Oleo Script', cursive;
+	color: #EF8718;
+	font-size: 2.4em;
+}
+
+.top h2, .top h3 {
+	font-family: 'Open Sans', sans-serif;
+}
+
+/****************************
+Main Content Styling
+****************************/
+
+.main {
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 2em;
+	background-color: white;
+	min-height: 300px;
+}
+
+.form-content, .list {
+	max-width: 1200px;
+}
+
+#item {
+	width: 20%;
+}
+
+#quantity, #price, #line-total {
+	width: 10%;
+}
+
+label {
+	margin-bottom: 1em;
+}
+
+input, label {
+    display:block;
+    font-size: 1.5em;
+}
+
+#item {
+	width: 200px !important;
+}
+
+#qty, #price {
+	width: 50px !important;
+}
+
+input {
+	border-style: none;
+	text-align: center;
+	border-radius: 5px;
+	color: #EF8718;
+	margin: 0 auto;
+	background-color: #efefef;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #EF8718;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #EF8718;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #EF8718;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #EF8718;
+}
+
+.main h2 {
+	text-align: center;
+}
+
+.list {
+	margin: 0 auto;
+	position: relative;
+	top: 3em;
+}
+
+/****************************
+Footer Content Styling
+****************************/
