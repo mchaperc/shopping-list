@@ -141,6 +141,10 @@ input {
 	top: 3em;
 }
 
+.fa:hover {
+	cursor: pointer;
+}
+
 /****************************
 Footer Content Styling
 ****************************/
