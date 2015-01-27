@@ -19,13 +19,18 @@
 			<h3>by</h3>
 			<h2>Matt Chastain</h2>
 		</div>
+		<div class="totals">
+				<p>List Total (w/ tax):</p>
+				<p class="actual-total">$0.00</p>
+			</div>
 	</header>
 	<section class="main">
 		<div class="form-content container col-sm-12">
-			<form>
-				<div class="col-sm-4">
+			<form id="myForm">
+				<div class="col-sm-4 item-input">
 				<label>Add Item:</label>
-				<input type="text" placeholder="Item Name..." id="item">
+				<input type="text" placeholder="Item" id="item" required>
+				<p id="required">*Required*</p>
 				</div>
 				<div class="col-sm-2">
 				<label>Quantity:</label>
@@ -44,6 +49,7 @@
 		<div class="list">
 			<h2>List:</h2>
 			<HR size="2" color="#EF8718" width="60%"></HR>
+			<div class="list-items"></div>
 		</div>
 	</section>
 	<section class="footer">

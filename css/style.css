@@ -64,6 +64,17 @@ Header Styling
 	font-family: 'Open Sans', sans-serif;
 }
 
+.totals {
+	position: relative;
+	float: right;
+	width: 9em;
+	height: 4em;
+	background-color: white;
+	border-radius: 10px;
+	top: -14em;
+	box-shadow: 0 0 3px black;
+}
+
 /****************************
 Main Content Styling
 ****************************/
@@ -76,6 +87,7 @@ Main Content Styling
 	padding-top: 2em;
 	background-color: white;
 	min-height: 300px;
+	padding-bottom: 1em;
 }
 
 .form-content, .list {
@@ -114,6 +126,8 @@ input {
 	color: #EF8718;
 	margin: 0 auto;
 	background-color: #efefef;
+	margin-bottom: 10px;
+	z-index: 2;
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
@@ -143,6 +157,22 @@ input {
 
 .fa:hover {
 	cursor: pointer;
+}
+
+form #required {
+	display: none;
+}
+
+.listing {
+	text-align: center;
+	width: 20em;
+	background-color: gray;
+	border-radius: 10px;
+	font-size: 1.2em;
+	height: 25px;
+	margin: 0 auto;
+	color: white;
+	margin-bottom: 5px;
 }
 
 /****************************
