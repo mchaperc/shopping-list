@@ -64,7 +64,7 @@ function itemObj() {
 function addItem() {
 	$('.list-items').append('<p>(' + list[(list.length - 1)].quantity + ') ' + list[(list.length - 1)].name + '</p>');
 	$('.list-items').children().addClass('listing');
-	//itemTotals();
+	itemTotals();
 }
 
 //Totaling the list items' price
