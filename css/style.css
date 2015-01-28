@@ -64,16 +64,6 @@ Header Styling
 	font-family: 'Open Sans', sans-serif;
 }
 
-.totals {
-	position: relative;
-	float: right;
-	width: 9em;
-	height: 4em;
-	background-color: white;
-	border-radius: 10px;
-	top: -14em;
-	box-shadow: 0 0 3px black;
-}
 
 /****************************
 Main Content Styling
@@ -86,8 +76,11 @@ Main Content Styling
 	text-align: center;
 	padding-top: 2em;
 	background-color: white;
-	min-height: 300px;
 	padding-bottom: 1em;
+	clear: both;
+    border:solid 1px black;
+    padding: 2em;
+    height: 100%;
 }
 
 .form-content, .list {
@@ -153,6 +146,8 @@ input {
 	margin: 0 auto;
 	position: relative;
 	top: 3em;
+	height: 100%;
+	padding-bottom: 2em;
 }
 
 .fa:hover {
@@ -175,6 +170,28 @@ form #required {
 	margin-bottom: 5px;
 }
 
+.listing:hover {
+	cursor: pointer;
+}
+
+.highlight {
+	background-color: #18ef87;
+	color: black;
+}
+
 /****************************
 Footer Content Styling
 ****************************/
+
+.totals {
+	position: relative;
+	margin: 0 auto;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	width: 9em;
+	height: 4em;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 0 3px black;
+	text-align: center;
+}
