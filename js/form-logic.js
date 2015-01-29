@@ -64,20 +64,20 @@ function itemObj() {
 function addItem() {
 	$('.list-items').append('<p>(' + list[(list.length - 1)].quantity + ') ' + list[(list.length - 1)].name + '</p>');
 	$('.list-items').children().addClass('listing');
-	// itemTotals();
+	itemTotals();
 }
 
 //Totaling the list items' price
 
-// function itemTotals() {
-// 	var total = 0;
-// 	for (var i = 0; i < list.length; i++) {
-// 		total += (list[i].price * list[i].quantity);
-// 	}
-// 	total = total * 1.06;
-// 	total = total.toFixed(2);
-// 	$('.actual-total').text('$' + total);
-// }
+function itemTotals() {
+	var total = 0;
+	for (var i = 0; i < list.length; i++) {
+		total += (list[i].price * list[i].quantity);
+	}
+	total = total * 1.06;
+	total = total.toFixed(2);
+	$('.actual-total').text('$' + total);
+}
 
 //Check Items when they're purchased
 
