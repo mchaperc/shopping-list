@@ -83,6 +83,10 @@ Main Content Styling
     height: 100%;
 }
 
+.form-content {
+	clear: both;
+}
+
 .form-content, .list {
 	max-width: 1200px;
 }
@@ -124,22 +128,23 @@ input {
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #EF8718;
+    color:    black;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    #EF8718;
+   color:    black;
    opacity:  1;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    #EF8718;
+   color:    black;
    opacity:  1;
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-   color:    #EF8718;
+   color:    black;
 }
 
 .main h2 {
 	text-align: center;
+	margin-top: 10px;
 }
 
 .list {
@@ -148,6 +153,7 @@ input {
 	top: 3em;
 	height: 100%;
 	padding-bottom: 2em;
+	clear: both;
 }
 
 .fa:hover {
@@ -178,6 +184,7 @@ form #required {
 	background-color: #18ef87;
 	color: black;
 }
+
 
 /****************************
 Footer Content Styling
