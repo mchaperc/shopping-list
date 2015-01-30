@@ -1,11 +1,12 @@
 //Global Variables
 
-var list = [], total = 0;
+var list = [], total = 0, itemIndex = 0;
 
 //Autofocus on item
 
 $(document).ready(function() {
 	$('#item').focus();
+	itemCheck();
 })
 
 //Validation of Item Names
@@ -30,7 +31,7 @@ $(document).keypress(function(e) {
 	var code = e.keyCode;
 	if (code == '13') {
 		formValid();
-		itemCheck();
+		// itemCheck();
 		remItem();
 	}
 });
@@ -48,7 +49,7 @@ function formClear() {
 
 $('.fa-plus-circle').on('click', function() {
 	formValid();
-	itemCheck();
+	// itemCheck();
 	remItem();
 });
 
@@ -69,7 +70,8 @@ function itemObj(item) {
 	
 function addItem() {
 	itemTotals();
-	$('.list-items').append('<p>(' + list[(list.length - 1)].quantity + ') ' + list[(list.length - 1)].name + '</p>');
+	$('.list-items').append('<p data-id="' + itemIndex + '">(' + list[(list.length - 1)].quantity + ') ' + list[(list.length - 1)].name + '</p>');
+	itemIndex++;
 	$('.list-items').children().addClass('listing');
 }
 
@@ -91,15 +93,20 @@ function itemTotals() {
 //Check Items when they're purchased
 
 function itemCheck() {
-	$('.listing').on('click', function() {
+	$('.list-items').on('click', '.listing', function() {
 		$(this).toggleClass('highlight');
-	})
+	});
 }
 
 //Remove highlighted items
 
 function remItem() {
 	$('.fa-trash').on('click', function() {
-		$('.highlight').remove();
+		$('.highlight').each(function(){
+			var id = $(this).data('id');
+			list.splice(id, 1);
+			$(this).remove();
+		})
+		itemTotals();
 	})
 }
