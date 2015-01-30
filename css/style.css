@@ -85,7 +85,7 @@ Main Content Styling
 
 .form-content {
 	clear: both;
-	margin-bottom: 2em;
+	/*margin-bottom: 2em;*/
 }
 
 .form-content, .list {

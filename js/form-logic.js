@@ -102,11 +102,11 @@ function itemCheck() {
 
 function remItem() {
 	$('.fa-trash').on('click', function() {
-		$('.highlight').each(function(){
+		for (var j = 0; j < $('.highlight').length; j++) {
 			var id = $(this).data('id');
 			list.splice(id, 1);
-			$(this).remove();
-		})
+		}
+		$('.highlight').remove();
 		itemTotals();
 	})
 }
