@@ -176,13 +176,14 @@ form #required {
 	margin-bottom: 5px;
 }
 
-.listing:hover {
+.list-items > p:hover {
 	cursor: pointer;
 }
 
 .highlight {
 	background-color: #18ef87;
 	color: black;
+	text-decoration: line-through;
 }
 
 

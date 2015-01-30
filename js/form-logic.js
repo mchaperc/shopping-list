@@ -1,12 +1,11 @@
-//Global List Variable
+//Global Variables
 
-var list = [];
+var list = [], total = 0;
 
 //Autofocus on item
 
 $(document).ready(function() {
 	$('#item').focus();
-	itemCheck();
 })
 
 //Validation of Item Names
@@ -20,7 +19,7 @@ function formValid() {
 		if( $('#item').css('display') != 'none' ) {
 			$('#required').hide();
 		}
-		itemObj();
+		window['item' + $('#item').val()] = new itemObj();
 		formClear();
 	}
 }
@@ -31,6 +30,8 @@ $(document).keypress(function(e) {
 	var code = e.keyCode;
 	if (code == '13') {
 		formValid();
+		itemCheck();
+		remItem();
 	}
 });
 
@@ -38,40 +39,48 @@ $(document).keypress(function(e) {
 
 function formClear() {
 	$('#item').val('');
-	$('#qty').val('1');
-	$('#price').val('0');
+	$('#qty').val('');
+	$('#price').val('');
 	$('#item').focus();
 }
 
 //Validation of Click to Add
 
-$('.fa').on('click', function(e) {
+$('.fa-plus-circle').on('click', function() {
 	formValid();
+	itemCheck();
+	remItem();
 });
 
-// //Creating an Item Object
+//Creating an Item Object
 
-function itemObj() {
+function itemObj(item) {
 	this.name = $('#item').val();
 	this.price = $('#price').val();
 	this.quantity = $('#qty').val();
 	list.push(this);
+	// for (var i = 0; i < list.length; i++) {
+	// 	alert(list[i].name);
+	// }
 	addItem();
 }
 
 //Adding Item to List
 	
 function addItem() {
+	itemTotals();
 	$('.list-items').append('<p>(' + list[(list.length - 1)].quantity + ') ' + list[(list.length - 1)].name + '</p>');
 	$('.list-items').children().addClass('listing');
-	itemTotals();
 }
 
 //Totaling the list items' price
 
 function itemTotals() {
-	var total = 0;
+	total = 0;
 	for (var i = 0; i < list.length; i++) {
+		if (list[i].quantity === "") {
+			list[i].quantity = 1;
+		}
 		total += (list[i].price * list[i].quantity);
 	}
 	total = total * 1.06;
@@ -82,7 +91,15 @@ function itemTotals() {
 //Check Items when they're purchased
 
 function itemCheck() {
-	$('.list-items').children().on('click', function() {
+	$('.listing').on('click', function() {
 		$(this).toggleClass('highlight');
-	});
+	})
+}
+
+//Remove highlighted items
+
+function remItem() {
+	$('.fa-trash').on('click', function() {
+		$('.highlight').remove();
+	})
 }
