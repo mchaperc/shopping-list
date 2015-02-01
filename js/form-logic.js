@@ -1,12 +1,12 @@
-//Global Variables
-
-var list = [], total = 0, itemIndex = 0;
+(function() {
+	var list = [], total = 0, itemIndex = 0;
 
 //Autofocus on item
 
 $(document).ready(function() {
 	$('#item').focus();
 	itemCheck();
+	remItem();
 })
 
 //Validation of Item Names
@@ -20,8 +20,7 @@ function formValid() {
 		if( $('#item').css('display') != 'none' ) {
 			$('#required').hide();
 		}
-		window['item' + $('#item').val()] = new itemObj();
-		formClear();
+		list.push(new Item());
 	}
 }
 
@@ -32,7 +31,8 @@ $(document).keypress(function(e) {
 	if (code == '13') {
 		formValid();
 		// itemCheck();
-		remItem();
+		addItem();
+		formClear();
 	}
 });
 
@@ -50,20 +50,16 @@ function formClear() {
 $('.fa-plus-circle').on('click', function() {
 	formValid();
 	// itemCheck();
-	remItem();
+	addItem();
+	formClear();
 });
 
 //Creating an Item Object
 
-function itemObj(item) {
+function Item(item) {
 	this.name = $('#item').val();
 	this.price = $('#price').val();
 	this.quantity = $('#qty').val();
-	list.push(this);
-	// for (var i = 0; i < list.length; i++) {
-	// 	alert(list[i].name);
-	// }
-	addItem();
 }
 
 //Adding Item to List
@@ -110,3 +106,4 @@ function remItem() {
 		itemTotals();
 	})
 }
+}())
